@@ -1,0 +1,15 @@
+header{
+  z-index: 1001 !important;
+}
+#root {
+  max-width: auto;
+  font-family: 'Montserrat';
+}
+
+.bg-gradient-to-r {
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8));
+}
+
+.to-blur {
+  backdrop-filter: blur(10px); /* Adjust the blur strength as needed */
+}
