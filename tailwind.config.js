@@ -16,7 +16,10 @@ export default {
     fontFamily:{
       Montserrat:['Montserrat', 'sans-serif'],
       Inter:['Inter', 'sans-serif'],
-      Poppins:['Poppins', 'sans-serif']
+      Poppins:['Poppins', 'sans-serif'],
+      Manrope: ['Manrope', 'sans-serif'],
+      Roboto: ['Roboto+Mono', 'sans-serif'],
+      Tatillium: ['Titillium+Web', 'sans-serif']
     },
     colors:{
       'silver': '#F5F7FA',

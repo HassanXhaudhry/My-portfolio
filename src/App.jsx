@@ -2,22 +2,20 @@ import React, { Fragment } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import Slider from "./components/Slider";
-import About from "./components/About";
-import Faq from "./components/Faq";
-import Pricing from "./components/Pricing";
-import ContactUs from "./components/ContactUs";
+import Services from "./components/Services";
+import Resume from "./components/Resume";
+import Experience from "./components/Experience";
+import Contact from "./components/Contact";
 
 const App = () => {
   return (
     <div>
     <Navbar/>
       <Home/>
-      <Slider/>
-      <About/>
-      <Pricing/>
-      <Faq/>
-      <ContactUs/>
+      <Services/>
+      <Resume/>
+      <Experience/>
+      <Contact/>
     </div>
   );
 };

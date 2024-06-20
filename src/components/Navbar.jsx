@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-scroll';
 import { FaXmark, FaBars } from "react-icons/fa6";
-import { IoHomeOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const [isMenuOpen, setisMenuOpen] = useState(false);
@@ -42,59 +41,58 @@ const Navbar = () => {
   const navItems = [
     { link: "Home", path: "home" },
     { link: "Services", path: "slider" },
-    { link: "About", path: "about" },
-    { link: "Pricing", path: "pricing" },
-    { link: "FAQ", path: "faq" },
+    { link: "Resume", path: "resume" },
+    { link: "Experience", path: "experience" },
+    { link: "Contact", path: "contact" },
   ];
 
   return (
-    <header className="shadow-md font-Montserrat bg-gray-300 m-2 rounded-lg top-0 left-0 right-0 ">
+    <header className="shadow-md bg-gray-800 top-0 left-0 right-0 text-white font-Roboto">
       <nav className={`py-4 px-4 ${isSticky ? "sticky top-0 left-0 right-0 border-b duration-300" : ""}`}>
         <div className="flex justify-between items-center text-base gap-8 md:gap-6">
-       
-          <a
-            href=""
-            className="text-2xl font-semibold flex items-center space-x-1"
-          >
-            <IoHomeOutline className='w-8 h-6 text-black-500'/>
-            <span className="text-[#263238] sm:text-base ">Real Estate</span>
+          <a href="" className="text-2xl font-semibold flex items-center space-x-1">
+            <span className="text-2xl tracking-widest">Hassan</span>
+            <span className="w-2 h-2 rounded-full bg-green-500 absolute xl:top-[39px] xl:left-[108px] lg:left-[108px] lg:top-[39px] md:left-[107px] md:top-[39px] left-[106px] top-[37px]"></span>
           </a>
-        
           <ul className="md:flex space-x-12 hidden cursor-pointer">
-            {navItems.map(({ link, path }) => 
+            {navItems.map(({ link, path }) => (
               <Link
                 to={path}
                 spy={true}
                 smooth={true}
                 offset={-100}
                 key={path}
-                className="block text-base text-gray900 first:font-medium "
-              >{link}
-              </Link> )}
+                className="block text-lg text-white hover:text-green-400 first:font-medium hover-underline hover-underline:hover"
+              >
+                {link}
+              </Link>
+            ))}
           </ul>
-         
-          <div className="space-x-12 hidden md:flex items-center ">
-            <button className=" bg-white border-2 border-none text-black hover:text-white hover:bg-black h-10 w-28 text-2sm rounded-3xl ">Sign up</button>
+          <div className="space-x-12 hidden md:flex items-center">
+            <button className="bg-green-500 border-2 border-none text-black hover:text-white tracking-widest font-medium h-10 w-28 text-2sm rounded-3xl pb-[2px] font-Tatillium">Hire Me</button>
           </div>
-
           <div className="md:hidden">
-            <button onClick={toggleMenu} className="focus:outline-none focus:text-gray-500 pt-2">
-              {isMenuOpen ? (<FaXmark className="h-6 w-6 " />) : (<FaBars className="h-6 w-6 " />)}
+            <button onClick={toggleMenu} className="focus:outline-none text-green-500 pt-2">
+              {isMenuOpen ? <FaXmark className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
             </button>
           </div>
         </div>
-
-        <div className={`space-y-4 m-2 rounded-lg ab shadow-md px-4 mt-16 py-6 ease-in  bg-gray-300 cursor-pointer transition-all duration-300 ${isMenuOpen ? "block bg-gray-200 top-0 right-0 left-0  " : "hidden"}`}>
-          {navItems.map(({ link, path }) => 
-            <Link
-              to={path}
-              spy={true}
-              smooth={true}
-              offset={-100}
-              key={path}
-              className="block text-base text-white hover:text-neutralDGrey first:font-medium text-center hover:text-black"
-            >{link}
-            </Link> )}
+        <div className={`fixed top-16 right-0 h-[calc(100vh-4rem)] w-3/4 max-w-xs bg-gray-800 transition-transform transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"} ease-in-out duration-300 md:hidden`}>
+          <div className="flex flex-col space-y-4 m-2 rounded-lg px-4 mt-8 cursor-pointer">
+            {navItems.map(({ link, path }) => (
+              <Link
+                to={path}
+                spy={true}
+                smooth={true}
+                offset={-100}
+                key={path}
+                className="block text-lg font-semibold text-white hover:text-green-500 text-center py-3"
+                onClick={closeMenu}
+              >
+                {link}
+              </Link>
+            ))}
+          </div>
         </div>
       </nav>
     </header>
