@@ -1,5 +1,5 @@
 header{
-  z-index: 1001 !important;
+  z-index: 100 !important;
 }
 
 .hover-underline::after {
@@ -13,5 +13,5 @@ header{
   margin-bottom: 1px;
 }
 .hover-underline:hover::after {
-  background-color:  rgb(14 159 110 / var(--tw-bg-opacity));; /* Your desired underline color */
+  background-color:  rgb(14 159 110 / var(--tw-bg-opacity));
 }

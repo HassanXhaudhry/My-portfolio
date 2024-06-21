@@ -47,7 +47,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="shadow-md bg-gray-800 top-0 left-0 right-0 text-white font-Roboto">
+    <header className="shadow-md bg-gray-900 top-0 left-0 right-0 text-white sticky ">
       <nav className={`py-4 px-4 ${isSticky ? "sticky top-0 left-0 right-0 border-b duration-300" : ""}`}>
         <div className="flex justify-between items-center text-base gap-8 md:gap-6">
           <a href="" className="text-2xl font-semibold flex items-center space-x-1">
@@ -69,7 +69,7 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="space-x-12 hidden md:flex items-center">
-            <button className="bg-green-500 border-2 border-none text-black hover:text-white tracking-widest font-medium h-10 w-28 text-2sm rounded-3xl pb-[2px] font-Tatillium">Hire Me</button>
+            <button className="bg-green-500 border-2 border-none text-black hover:text-white tracking-widest font-medium h-10 w-28 text-2sm rounded-3xl pb-[1px] font-Tatillium">Hire Me</button>
           </div>
           <div className="md:hidden">
             <button onClick={toggleMenu} className="focus:outline-none text-green-500 pt-2">
@@ -77,7 +77,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        <div className={`fixed top-16 right-0 h-[calc(100vh-4rem)] w-3/4 max-w-xs bg-gray-800 transition-transform transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"} ease-in-out duration-300 md:hidden`}>
+        <div className={`fixed top-16 right-0 h-[calc(100vh-4rem)] w-3/4 max-w-xs bg-gray-900 transition-transform transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"} ease-in-out duration-300 md:hidden`}>
           <div className="flex flex-col space-y-4 m-2 rounded-lg px-4 mt-8 cursor-pointer">
             {navItems.map(({ link, path }) => (
               <Link

@@ -1,3 +1,5 @@
+
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -18,8 +20,10 @@ export default {
       Inter:['Inter', 'sans-serif'],
       Poppins:['Poppins', 'sans-serif'],
       Manrope: ['Manrope', 'sans-serif'],
-      Roboto: ['Roboto+Mono', 'sans-serif'],
-      Tatillium: ['Titillium+Web', 'sans-serif']
+      Roboto: ['Roboto', 'sans-serif'],
+      Tatillium: ['Titillium', 'sans-serif'],
+      Inconsolata: ['Inconsolata', 'sans-serif'],
+      Anton:['Anton', 'sans-serif'],
     },
     colors:{
       'silver': '#F5F7FA',
