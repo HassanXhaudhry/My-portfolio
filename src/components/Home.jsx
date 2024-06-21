@@ -32,36 +32,83 @@ const Home = () => {
             goals in a given time.
           </p>
           <div className="flex flex-col xl:flex-row justify-center gap-8 items-center">
-          <div style={{ borderWidth: '1.5px', borderStyle: 'solid', borderColor: '#10b981' }} className="flex justify-center bg-transparent hover:bg-green-500 border-2 border-green-500 w-44 py-2 px-2 text-white tracking-widest font-medium text-2sm rounded-3xl">
-            <button className="uppercase flex items-center gap-2">
-              <span className="">Download CV</span>
-              <FiDownload className="text-xl" />
-            </button>
-          </div>
-          <div className="flex gap-4 w-52 justify-center">
-            {socials.map((item, index) => {
-              return (
-                <Link key={index} to={item.path} style={{ borderWidth: '1.5px', borderStyle: 'solid', borderColor: '#10b981' }} className="w-9 h-9 border-[1.5px] border-green-500 rounded-full flex justify-center items-center text-base hover:bg-green-500 hover:text-primary hover:transition-all duration-500">{item.icon}</Link>
-              )
-            })}
-          </div>
+            <div
+              style={{
+                borderWidth: "1.5px",
+                borderStyle: "solid",
+                borderColor: "#10b981",
+              }}
+              className="flex justify-center bg-transparent hover:bg-green-500 border-2 border-green-500 w-44 py-2 px-2 text-white tracking-widest font-medium text-2sm rounded-3xl"
+            >
+              <button className="uppercase flex items-center gap-2">
+                <span className="">Download CV</span>
+                <FiDownload className="text-xl" />
+              </button>
+            </div>
+            <div className="flex gap-4 w-52 justify-center">
+              {socials.map((item, index) => {
+                return (
+                  <Link
+                    key={index}
+                    to={item.path}
+                    style={{
+                      borderWidth: "1.5px",
+                      borderStyle: "solid",
+                      borderColor: "#10b981",
+                    }}
+                    className="w-9 h-9 border-[1.5px] border-green-500 rounded-full flex justify-center items-center text-base hover:bg-green-500 hover:text-primary hover:transition-all duration-500"
+                  >
+                    {item.icon}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
 
         <div className="w-full h-full relative flex justify-center items-center">
-        <motion.div
-        initial={{opacity:0}}
-        animate={{opacity:1, transition:{delay: 2, duration: 0.3, ease: "easeIn"}}}
-        >
-        <motion.div
-        initial={{opacity:0}}
-        animate={{opacity:1, transition:{delay: 2.4, duration: 0.3, ease: "easeOut"}}}
-        className="w-[298px] h-[298px] xl:w-[298px] xl:h-[298px] mix-blend-lighten"
-        >
-          <div >
-            <img src={me} alt="img" className="object-contain" />
-          </div>
-          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: { delay: 2, duration: 0.3, ease: "easeIn" },
+            }}
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: { delay: 2.4, duration: 0.3, ease: "easeOut" },
+              }}
+              className="absolute w-[278px] h-[278px] xl:w-[298px] xl:h-[298px] mix-blend-lighten"
+            >
+                <img src={me} alt="img" className="object-contain pt-4 pl-3" />
+            </motion.div>
+            <motion.svg className="w-[300px] xl:w-[320px] h-[300px] xl:h-[320px]"
+            fill="transparent"
+            viewBox="0 0 506 506"
+            xmlns='http://www.w3.org/2000/svg'>
+            <motion.circle
+            cx="253"
+            cy="253"
+            r="250"
+            stroke="#10b981"
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            initial={{ strokeDasharray: "24 10 0 0"}}
+            animate={{
+              strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
+              rotate:[120, 360],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}>
+
+            </motion.circle>
+            </motion.svg>
           </motion.div>
         </div>
       </div>
