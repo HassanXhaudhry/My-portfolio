@@ -4,6 +4,7 @@ import me from "../assets/me.png";
 import { FaGithub, FaLinkedin, FaWhatsapp, FaTwitter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 const Home = () => {
 
@@ -14,9 +15,28 @@ const Home = () => {
     {icon: <FaTwitter />, path: 'https://x.com/mr_hassaanch'}
   ];
 
+  const stats =[
+    {
+      num: 1,
+      text: "Years of experience"
+    },
+    {
+      num: 10,
+      text: "Projects completed"
+    },
+    {
+      num: 8,
+      text: "Technologies mastered"
+    },
+    {
+      num: 100,
+      text: "Code Commits"
+    }
+  ]
+
   return (
-    <div className="flex justify-center items-center max-w-screen-2xl mx-auto min-h-screen xl:h-screen bg-gray-900 text-white ">
-      <div className="flex flex-col xl:gap-44 gap-10 xl:mt-0 mt-12 mb-20 xl:flex-row items-center justify-between ">
+    <div className="flex flex-col justify-center items-center max-w-screen-2xl mx-auto min-h-screen xl:h-screen bg-gray-900 text-white ">
+      <div className="flex flex-col xl:gap-44 gap-10 xl:mt-[-50px] mt-12 mb-16 xl:flex-row items-center justify-between ">
         <div className="text-center xl:text-left order-2 xl:order-none xl:mx-0 mx-4">
           <span className="text-lg sm:text-xl tracking-widest font-Anton">
             Frontend Developer
@@ -110,6 +130,27 @@ const Home = () => {
             </motion.circle>
             </motion.svg>
           </motion.div>
+        </div>
+      </div>
+
+      <div className="mx-auto my-2">
+        <div className="flex flex-wrap gap-8 max-w-[80vw] mx-auto xl:max-w-none">
+          {stats.map((item, index) => {
+            return(
+              <div className="flex-1 flex gap-1 items-center justify-center xl:justify-start"
+              key={index}>
+              <CountUp
+              end={item.num}
+              duration={5}
+              delay={2}
+              className="text-2xl xl:text-4xl font-bold"/>
+              <span className="text-2xl xl:text-3xl font-bold pt-1">+</span>
+              &nbsp;
+              <p className={`${
+              item.text.length < 15 ? "max-w-[80px] text-sm" : "max-w-[150px] text-sm"} leading-snug text-white/80`}>{item.text}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
