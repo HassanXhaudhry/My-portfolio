@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
 import { FaXmark, FaBars } from "react-icons/fa6";
 
 const Navbar = () => {
@@ -40,14 +40,14 @@ const Navbar = () => {
 
   const navItems = [
     { link: "Home", path: "home" },
-    { link: "Services", path: "slider" },
+    { link: "Skills", path: "skills" },
     { link: "Resume", path: "resume" },
     { link: "Experience", path: "experience" },
     { link: "Contact", path: "contact" },
   ];
 
   return (
-    <header className="shadow-md bg-gray-900 top-0 left-0 right-0 text-white sticky ">
+    <header className="shadow-md bg-gray-900 top-0 left-0 right-0 text-white sticky">
       <nav className={`py-4 px-4 ${isSticky ? "sticky top-0 left-0 right-0 border-b duration-300" : ""}`}>
         <div className="flex justify-between items-center text-base gap-8 md:gap-6">
           <div className="text-2xl font-semibold flex items-center space-x-1">
@@ -56,16 +56,17 @@ const Navbar = () => {
           </div>
           <ul className="md:flex space-x-12 hidden cursor-pointer">
             {navItems.map(({ link, path }) => (
-              <Link
+              <ScrollLink
                 to={path}
                 spy={true}
                 smooth={true}
                 offset={-100}
                 key={path}
                 className="block text-lg text-white hover:text-green-400 first:font-medium hover-underline hover-underline:hover"
+                onClick={closeMenu}
               >
                 {link}
-              </Link>
+              </ScrollLink>
             ))}
           </ul>
           <div className="space-x-12 hidden md:flex items-center">
@@ -80,7 +81,7 @@ const Navbar = () => {
         <div className={`fixed top-16 right-0 h-[calc(100vh-4rem)] w-3/4 max-w-xs bg-gray-900 transition-transform transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"} ease-in-out duration-300 md:hidden`}>
           <div className="flex flex-col space-y-4 m-2 rounded-lg px-4 mt-8 cursor-pointer">
             {navItems.map(({ link, path }) => (
-              <Link
+              <ScrollLink
                 to={path}
                 spy={true}
                 smooth={true}
@@ -90,7 +91,7 @@ const Navbar = () => {
                 onClick={closeMenu}
               >
                 {link}
-              </Link>
+              </ScrollLink>
             ))}
           </div>
         </div>

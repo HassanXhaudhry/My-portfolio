@@ -1,8 +1,8 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import Services from "./components/Services";
+import Skills from "./components/Skills";
 import Resume from "./components/Resume";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
@@ -10,12 +10,12 @@ import Contact from "./components/Contact";
 const App = () => {
   return (
     <div>
-    <Navbar/>
-      <Home/>
-      <Services/>
-      <Resume/>
-      <Experience/>
-      <Contact/>
+      <Navbar />
+      <Home />
+      <Skills />
+      <Resume />
+      <Experience />
+      <Contact />
     </div>
   );
 };
