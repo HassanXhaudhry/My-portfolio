@@ -3,8 +3,8 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Skills from "./components/Skills";
-import Resume from "./components/Resume";
-import Experience from "./components/Experience";
+import Resume from "./components/Projects";
+import Experience from "./components/About";
 import Contact from "./components/Contact";
 
 const App = () => {

@@ -41,18 +41,18 @@ const Navbar = () => {
   const navItems = [
     { link: "Home", path: "home" },
     { link: "Skills", path: "skills" },
-    { link: "Resume", path: "resume" },
-    { link: "Experience", path: "experience" },
+    { link: "Projects", path: "projects" },
+    { link: "About", path: "about" },
     { link: "Contact", path: "contact" },
   ];
 
   return (
     <header className="shadow-md bg-gray-900 top-0 left-0 right-0 text-white sticky">
       <nav className={`py-4 px-4 ${isSticky ? "sticky top-0 left-0 right-0 border-b duration-300" : ""}`}>
-        <div className="flex justify-between items-center text-base gap-8 md:gap-6">
+        <div className="flex justify-between items-center text-base gap-8 md:gap-6 px-8">
           <div className="text-2xl font-semibold flex items-center space-x-1">
             <span className="text-2xl tracking-widest">Hassan</span>
-            <span className="w-2 h-2 rounded-full bg-green-500 absolute xl:top-[39px] xl:left-[108px] lg:left-[108px] lg:top-[39px] md:left-[107px] md:top-[39px] left-[106px] top-[37px]"></span>
+            <span className="w-2 h-2 rounded-full bg-green-500 absolute xl:top-[36.5px] xl:left-[140px] lg:left-[140px] lg:top-[36.5px] md:left-[140px] md:top-[36.5px] left-[140px] top-[37px]"></span>
           </div>
           <ul className="md:flex space-x-12 hidden cursor-pointer">
             {navItems.map(({ link, path }) => (
@@ -69,9 +69,6 @@ const Navbar = () => {
               </ScrollLink>
             ))}
           </ul>
-          <div className="space-x-12 hidden md:flex items-center">
-            <button className="bg-green-500 border-2 border-none text-black hover:text-white tracking-widest font-medium h-10 w-28 text-2sm rounded-3xl pb-[1px] font-Tatillium">Hire Me</button>
-          </div>
           <div className="md:hidden">
             <button onClick={toggleMenu} className="focus:outline-none text-green-500 pt-2">
               {isMenuOpen ? <FaXmark className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}

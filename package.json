@@ -16,6 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@heroicons/react": "^2.1.1",
     "@material-tailwind/html": "^2.2.2",
+    "caniuse-lite": "^1.0.30001636",
     "flowbite": "^2.2.1",
     "flowbite-react": "^0.7.2",
     "framer-motion": "^10.18.0",
