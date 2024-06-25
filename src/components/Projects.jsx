@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/navigation';
 import { GoArrowUpRight } from 'react-icons/go';
 import { BsGithub } from 'react-icons/bs';
 import { Tooltip } from 'flowbite-react';
@@ -9,6 +11,7 @@ import cowin from '../assets/cowin.jpg';
 import cartzilla from '../assets/cartzilla.jpg';
 import weather from '../assets/weather.jpg';
 import todo from '../assets/todo.jpg';
+import { PiCaretLeftBold, PiCaretRightBold } from 'react-icons/pi';
 
 const projects = [
   {
@@ -66,7 +69,7 @@ const Projects = () => {
       <div className="max-w-screen-2xl mx-auto bg-gray-900 text-white">
         <motion.section
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeIn" } }}
           className="flex flex-col justify-center py-2 xl:px-0"
         >
           <div className="flex flex-col xl:flex-row xl:gap-24 gap-16 xl:mx-28 mx-6 mb-16">
@@ -102,7 +105,7 @@ const Projects = () => {
                   }}
                 />
                 <div className="flex items-center gap-6">
-                  <div className="w-[40px] h-[40px] bg-gray-600 flex justify-center items-center rounded-full">
+                  <div className="w-[40px] h-[40px] bg-gray-600 hover:bg-green-500 flex justify-center items-center rounded-full">
                     <Tooltip
                       content="Live Project"
                       placement="bottom"
@@ -118,7 +121,7 @@ const Projects = () => {
                       </a>
                     </Tooltip>
                   </div>
-                  <div className="w-[40px] h-[40px] bg-gray-600 flex justify-center items-center rounded-full">
+                  <div className="w-[40px] h-[40px] bg-gray-600 hover:bg-green-500 flex justify-center items-center rounded-full">
                     <Tooltip
                       content="Git Repository"
                       placement="bottom"
@@ -144,11 +147,16 @@ const Projects = () => {
                 slidesPerView={1}
                 className="xl:h-[460px] pt-10"
                 onSlideChange={handleSlideChange}
+                navigation={{
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+                }}
+                modules={[Navigation]}
               >
                 {projects.map((project, index) => (
                   <SwiperSlide key={index} className="w-full">
                     <div className="h-[260px] relative group flex justify-center items-center">
-                      <div></div>
+                   
                       <div className="relative w-full h-full">
                         <img
                           src={project.image}
@@ -159,6 +167,14 @@ const Projects = () => {
                     </div>
                   </SwiperSlide>
                 ))}
+                <div className="swiper-button-container">
+                  <button className="swiper-button-prev text-black bg-green-400 p-4 w-[40px] h-[40px] flex justify-center items-center transition-all">
+                    <PiCaretLeftBold className="text-xs" />
+                  </button>
+                  <button className="swiper-button-next text-black bg-green-400 p-4 w-[40px] h-[40px] flex justify-center items-center transition-all">
+                    <PiCaretRightBold className="text-xs" />
+                  </button>
+                </div>
               </Swiper>
             </div>
           </div>
