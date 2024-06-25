@@ -25,7 +25,7 @@ const icons = [
 const Skills = () => {
   return (
     <section id="skills">
-      <div className="flex flex-col justify-center items-center max-w-screen-2xl mx-auto bg-gray-900 text-white py-6">
+      <div className="flex flex-col justify-center items-center max-w-screen-2xl mx-auto bg-gray-900 text-white py-16">
         <p className="text-3xl xl:text-4xl tracking-widest font-bold font-Inconsolata text-green-400">SKILLS</p>
         <div className="grid gap-6 gap-x-10 my-20 grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
           {icons.map(({ Component, color }, index) => (
