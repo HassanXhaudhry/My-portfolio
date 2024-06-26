@@ -64,7 +64,7 @@ const Home = () => {
                   borderStyle: "solid",
                   borderColor: "#10b981",
                 }}
-                className="flex justify-center bg-transparent hover:bg-green-500 border-2 border-green-500 w-44 py-2 px-2 text-white tracking-widest font-medium text-2sm rounded-3xl"
+                className="flex justify-center bg-transparent hover:bg-green-500 border-2 border-green-500 w-48 py-2 px-2 text-white tracking-widest font-medium text-2sm rounded-3xl"
               >
                 <button className="uppercase flex items-center gap-2">
                   <span className="">Download CV</span>
