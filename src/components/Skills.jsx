@@ -24,29 +24,63 @@ const icons = [
 
 const Skills = () => {
   return (
-    <section id="skills">
-      <div className="flex flex-col justify-center items-center max-w-screen-2xl mx-auto bg-gray-900 text-white py-16">
-        <p className="text-3xl xl:text-4xl tracking-widest font-bold font-Inconsolata text-green-400">SKILLS</p>
-        <div className="grid gap-6 gap-x-10 my-20 grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
+    <motion.section 
+      id="skills"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="flex flex-col justify-center items-center max-w-screen-2xl mx-auto bg-gray-900 text-white py-12">
+        <motion.p 
+          className="text-3xl xl:text-4xl tracking-widest font-bold font-Inconsolata text-green-400"
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          SKILLS
+        </motion.p>
+        <motion.div 
+          className="grid gap-6 gap-x-10 my-20 grid-cols-2 md:grid-cols-4 lg:grid-cols-6"
+          variants={{
+            hidden: { opacity: 0 },
+            show: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1
+              }
+            }
+          }}
+          initial="hidden"
+          animate="show"
+        >
           {icons.map(({ Component, color }, index) => (
             <motion.div
               key={index}
-              style={{ borderWidth: "3px", borderStyle: "solid", borderColor: "#6B7280" }}
+              style={{ borderWidth: "3px", borderStyle: "solid", borderColor: "#6B7280"}}
               className="rounded-3xl p-3"
-              animate={{ y: [0, -7.5, 0] }}
-              transition={{
-                repeat: Infinity,
-                duration: 2 + index * 0.1, 
-                delay: index * 0.2, 
-                ease: "easeInOut"
+              variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                show: { opacity: 1, scale: 1 }
               }}
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <Component className={`text-6xl`} style={{ color }} />
+              <motion.div
+                animate={{ y: [0, -7.5, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 2 + index * 0.1,
+                  delay: index * 0.2,
+                  ease: "easeInOut"
+                }}
+              >
+                <Component className={`text-6xl`} style={{ color }} />
+              </motion.div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

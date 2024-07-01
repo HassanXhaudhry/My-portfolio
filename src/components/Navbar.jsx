@@ -63,6 +63,8 @@ const Navbar = () => {
                 offset={-100}
                 key={path}
                 className="block text-lg text-white hover:text-green-400 first:font-medium hover-underline hover-underline:hover"
+                activeClass="active"
+                activeStyle={{ color: '#10b981' }}
                 onClick={closeMenu}
               >
                 {link}
@@ -85,6 +87,8 @@ const Navbar = () => {
                 offset={-100}
                 key={path}
                 className="block text-lg font-semibold text-white hover:text-green-500 text-center py-3"
+                activeClass="active"
+                activeStyle={{ color: 'green' }}
                 onClick={closeMenu}
               >
                 {link}
