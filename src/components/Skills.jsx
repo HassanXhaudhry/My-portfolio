@@ -28,7 +28,7 @@ const Skills = () => {
       id="skills"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 1 }}
     >
       <div className="flex flex-col justify-center items-center max-w-screen-2xl mx-auto bg-gray-900 text-white py-12">
         <motion.p 

@@ -83,7 +83,7 @@ const Home = () => {
                 variants={itemVariants}
               >
                 <button className="uppercase flex items-center gap-2">
-                  <span className="">Download CV</span>
+                <a href="https://drive.google.com/file/d/1YDoFcGbWKSm3K_1KbV4TA-Ppd03c38LL/view?usp=drive_link" download='' target="_blank" >Download CV</a>
                   <FiDownload className="text-xl" />
                 </button>
               </motion.div>
@@ -132,7 +132,7 @@ const Home = () => {
                   <img 
                     src={me} 
                     alt="Muhammad Hassan" 
-                    className="object-contain pt-4 pl-3 w-full h-full"
+                    className="object-contain pt-2 pl-3 w-full h-full"
                   />
                 )}
               </motion.div>
