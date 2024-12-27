@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -6,11 +6,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { GoArrowUpRight } from "react-icons/go";
 import { BsGithub } from "react-icons/bs";
-import { Tooltip } from "flowbite-react";
-import cowin from "../assets/cowin.jpg";
+import cowin from "../assets/cowin.png";
+import deals4trip from "../assets/deals4trip.png";
 import cartzilla from "../assets/cartzilla.jpg";
 import weather from "../assets/weather.jpg";
-import todo from "../assets/todo.jpg";
 import {
   MdOutlineKeyboardArrowRight,
   MdOutlineKeyboardArrowLeft,
@@ -18,59 +17,82 @@ import {
 
 const projects = [
   {
-    num: "01",
-    category: "Cowin",
+    num: "1",
+    category: "Deals4Trip",
     title: "Project 1",
     description:
-      "Project at Mexasol, which includes attractive UI, light/dark theme, Login/Signup authentication/validation and much more",
+      "Developed a dynamic project at Trixly featuring an eye-catching UI, language translation, secure login/signup with validation, AI-powered chat, and more innovative features.",
     stack: [
-      { name: "Javascript" },
+      { name: "React" },
       { name: "TailwindCSS" },
       { name: "FlowbiteReact" },
-      { name: "Formik" },
+      { name: "MUI" },
       { name: "ReduxToolkit" },
+      { name: "i18Next" },
+      { name: "TailwindCSS" },
+      { name: "FlowbiteReact" },
+      { name: "Framer motion" },
+      { name: "Axios" },
+      { name: "Formik/Yup" },
     ],
-    image: cowin,
-    live: "https://cowinai.netlify.app/",
-    github: "https://github.com/HassanXhaudhry/cowinai/",
+    image: deals4trip,
+    live: "https://deals4trip.netlify.app/",
+    github: "https://github.com/HassanXhaudhry/Deals4Trip.git",
   },
   {
-    num: "02",
-    category: "Ecommmerce Store",
+    num: "2",
+    category: "Cowin AI",
     title: "Project 2",
     description:
-      "Single page e-commerce platform which displays items and manages the state of adding, removing, increasing/decreasing amount of items and sub total.",
+      "Built an exciting project at Mexasol with a sleek UI, light/dark mode toggle, secure login/signup with validation, and many more features to enhance user experience.",
     stack: [
-      { name: "Javascript" },
-      { name: "TailwindCSS" },
-      { name: "ReactBootstrap" },
+      { name: "React" },
+      { name: "Bootstrap" },
       { name: "FlowbiteReact" },
+      { name: "Ant Design" },
       { name: "ReduxToolkit" },
+      { name: "Framer motion" },
+    ],
+    image: cowin,
+    live: "https://www.cowin.ai/",
+    github: "https://github.com/HassanXhaudhry/cowinai.git",
+  },
+  {
+    num: "3",
+    category: "E-commerce Store",
+    title: "Project 3",
+    description:
+      "Built a sleek single-page e-commerce platform with light/dark mode, dynamic cart management, and real-time subtotal updates for a seamless user experience.",
+    stack: [
+      { name: "React" },
+      { name: "TailwindCSS" },
+      { name: "FlowbiteReact" },
+      { name: "Styled Components" },
+      { name: "ReduxToolkit" },
+      { name: "TailwindCSS" },
+      { name: "FlowbiteReact" },
+      { name: "Framer motion" },
+      { name: "Axios" },
+      { name: "Formik/Yup" },
     ],
     image: cartzilla,
     live: "https://cartzillaweb.netlify.app/",
-    github: "https://github.com/HassanXhaudhry/Cartzilla/",
+    github: "https://github.com/HassanXhaudhry/Cartzilla.git",
   },
   {
-    num: "03",
-    category: "Weather Webapp",
-    title: "Project 3",
-    description: "Weather web app using Visual-crossing-weather Rapid API ",
-    stack: [{ name: "Javascript" }, { name: "TailwindCSS" }],
-    image: weather,
-    live: "https://weatherdegree.netlify.app/",
-    github: "https://github.com/HassanXhaudhry/Weather-App/",
-  },
-  {
-    num: "04",
-    category: "Todo Webapp",
+    num: "4",
+    category: "Weather App",
     title: "Project 4",
     description:
-      "An attractive Todo web app having sweet alerts on adding, deleting and updating tasks.",
-    stack: [{ name: "Javascript" }, { name: "StyledComponents" }],
-    image: todo,
-    live: "https://todoitman.netlify.app/",
-    github: "https://github.com/HassanXhaudhry/Todo-app/",
+      "Created a cool weather web app that shows temperature, wind speed, and humidity for every day of the week, along with a search feature to explore forecasts for any city.",
+    stack: [
+      { name: "Visual-crossing weather rapid API" },
+      { name: "TailwindCSS" },
+      { name: "Axios" },
+    ],
+    image: weather,
+    live: "https://weatherdegree.netlify.app/",
+    github: "https://github.com/HassanXhaudhry/Weather-App.git",
   },
 ];
 
@@ -83,86 +105,57 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects">
-      <div className="max-w-screen-2xl mx-auto bg-gray-900 text-white">
+    <section id="projects" className="bg-gray-900 text-white">
+      <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 py-10">
         <motion.section
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+            transition: { delay: 0.4, duration: 0.6, ease: "easeIn" },
           }}
-          className="flex flex-col justify-center py-2 xl:px-0"
         >
-          <div className="flex flex-col xl:flex-row xl:gap-24 gap-16 xl:mx-28 mx-6 mb-16">
-            <div className="w-full xl:w-[50%] xl:h-[360px] flex flex-col xl:justify-center order-first xl:order-none items-center">
-              <div className="flex flex-col gap-5 h-[50%] xl:mb-24 mb-2">
-                <div
-                  style={{
-                    backgroundColor: "transparent",
-                    textShadow: `-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff`,
-                  }}
-                  className="text-8xl leading-none font-bold text-gray-900"
-                >
+          <div className="flex flex-col xl:flex-row gap-12 items-center">
+            <div className="w-full xl:w-1/2">
+              <div className="flex flex-col gap-6">
+                <h1 className="text-6xl md:text-7xl font-bold text-gray-500">
                   {project.num}
-                </div>
-                <p className="text-[42px] font-bold leading-none group-hover:text-green-500 transition-all duration-500 capitalize">
+                </h1>
+                <h2 className="text-3xl font-bold capitalize">
                   {project.category}
-                </p>
+                </h2>
                 <p className="text-gray-400">{project.description}</p>
-                <div className="flex flex-col md:flex-row md:space-x-2">
+                <div className="flex flex-wrap gap-2">
                   {project.stack.map((item, index) => (
-                    <p key={index} className="text-md text-green-500">
+                    <span
+                      key={index}
+                      className="text-sm bg-gray-700 text-green-400 px-2 py-1 rounded-md"
+                    >
                       {item.name}
-                      {index !== project.stack.length - 1 && ","}
-                    </p>
+                    </span>
                   ))}
                 </div>
-
-                <hr
-                  style={{
-                    borderWidth: "0.5px",
-                    borderStyle: "solid",
-                    borderColor: "#9CA3AF",
-                  }}
-                />
-                <div className="flex items-center gap-6">
-                  <div className="w-[40px] h-[40px] bg-gray-600 hover:bg-green-500 flex justify-center items-center rounded-full">
-                    <Tooltip
-                      content="Live Project"
-                      placement="bottom"
-                      style="light"
-                      className="w-24 text-xs text-center"
-                    >
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <GoArrowUpRight className="text-xl" />
-                      </a>
-                    </Tooltip>
-                  </div>
-                  <div className="w-[40px] h-[40px] bg-gray-600 hover:bg-green-500 flex justify-center items-center rounded-full">
-                    <Tooltip
-                      content="Git Repository"
-                      placement="bottom"
-                      style="light"
-                      className="w-28 text-xs text-center"
-                    >
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <BsGithub className="text-xl" />
-                      </a>
-                    </Tooltip>
-                  </div>
+                <div className="flex gap-4 mt-4">
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 flex justify-center items-center bg-gray-700 hover:bg-green-500 rounded-full"
+                  >
+                    <GoArrowUpRight className="text-xl" />
+                  </a>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 flex justify-center items-center bg-gray-700 hover:bg-green-500 rounded-full"
+                  >
+                    <BsGithub className="text-xl" />
+                  </a>
                 </div>
               </div>
             </div>
 
-            <div className="w-full xl:w-1/2 px-4">
+            <div className="w-full xl:w-1/2">
               <Swiper
                 spaceBetween={30}
                 slidesPerView={1}
@@ -192,9 +185,13 @@ const Projects = () => {
                   </SwiperSlide>
                 ))}
 
-                <div className="absolute top-48 left-[-10px] right-[-10px] z-10 flex justify-between">
-                  <MdOutlineKeyboardArrowLeft className="swiper-button-prev rounded-r-sm shadow-md text-black bg-green-400 transition-colors duration-200" />
-                  <MdOutlineKeyboardArrowRight className="swiper-button-next rounded-l-sm shadow-md text-black bg-green-400 transition-colors duration-200" />
+                <div className="absolute top-1/2 transform -translate-y-1/2 left-0 right-0 z-50 flex justify-between px-4">
+                  <button className="swiper-button-prev text-white cursor-pointer">
+                    <MdOutlineKeyboardArrowLeft className="w-4 h-4" />
+                  </button>
+                  <button className="swiper-button-next text-white cursor-pointer">
+                    <MdOutlineKeyboardArrowRight className="w-4 h-4" />
+                  </button>
                 </div>
               </Swiper>
             </div>

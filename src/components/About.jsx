@@ -49,14 +49,14 @@ const About = () => {
               Experience
             </h2>
             <div className="mb-6">
-              <p className="font-semibold text-gray-200 font-Montserrat text-sm">REACT JS DEVELOPER INTERN</p>
-              <p className="text-[12px] text-gray-400 font-Manrope">Craftooo, Lahore</p>
-              <p className="text-xs font-Roboto text-gray-400">Oct 2023 – Dec 2023</p>
+              <p className="font-semibold text-gray-200 font-Montserrat text-sm">React JS Developer (On-site)</p>
+              <p className="text-[12px] text-gray-400 font-Manrope">Mexasol, Lhr</p>
+              <p className="text-xs font-Roboto text-gray-400">Aug 2023 – Dec 2023</p>
             </div>
             <div>
-              <p className="font-semibold text-gray-200 font-Montserrat text-sm">REACT JS DEVELOPER</p>
-              <p className="text-[12px] text-gray-400 font-Manrope">Mexasol, Lahore</p>
-              <p className="text-xs font-Roboto text-gray-400">Jan 2024 – May 2024</p>
+              <p className="font-semibold text-gray-200 font-Montserrat text-sm">React JS Developer (Remote)</p>
+              <p className="text-[12px] text-gray-400 font-Manrope">Trixly AI Solutions, Isb</p>
+              <p className="text-xs font-Roboto text-gray-400">Mar 2024 – Oct 2024</p>
             </div>
           </AnimatedSection>
         </div>
